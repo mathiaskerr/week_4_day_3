@@ -27,4 +27,19 @@ def create_book():
     book_repository.save(book)
     return redirect(("/books"))
 
-    
+@books_blueprint.route("/book/<id>", methods=["GET"])
+def show_book(id):
+    book = book_repository.select(id)
+    return render_template("books/show.html", show_book = book)
+
+@books_blueprint.route("/book/<id>/delete", methods=["POST"])
+def delete_book(id):
+    book_repository.delete(id)
+    return redirect('/books')
+    # deleting only the top entry on webpage
+
+@books_blueprint.route("/book/<id>/edit", methods= ["GET"])
+def edit_book(id):
+    book = book_repository.select(id)
+    authors = author_repository.select_all()
+    return render_template("books/edit.html", task = task, all_authors = authors)

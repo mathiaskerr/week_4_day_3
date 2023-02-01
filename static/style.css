@@ -12,3 +12,7 @@
 .menu > li > a {
     text-decoration: none;
 } 
+.delete-button {
+    padding: 5px;
+    margin: 5px;
+}

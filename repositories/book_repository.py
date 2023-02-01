@@ -29,6 +29,7 @@ def select(id):
     sql = "SELECT * FROM books WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
+    
 
     if result is not None:
         author = author_repository.select(result['author_id'])
@@ -36,12 +37,12 @@ def select(id):
     return book
 
 def delete_all():
-    sql = "DELETE  FROM books"
+    sql = "DELETE FROM books"
     run_sql(sql)
 
 
 def delete(id):
-    sql = "DELETE  FROM books WHERE id = %s"
+    sql = "DELETE FROM books WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 
