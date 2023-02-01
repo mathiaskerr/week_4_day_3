@@ -1,0 +1,14 @@
+*{
+    text-align: center;
+}
+.menu{
+    display: flex;
+
+}
+.menu > li{
+    padding-right: 10px;
+    list-style: none;
+}
+.menu > li > a {
+    text-decoration: none;
+} 

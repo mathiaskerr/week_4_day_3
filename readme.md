@@ -1,5 +1,5 @@
 DROP database
 CREATE database
-psql -d nam -f db/filname
+psql -d DBNAME -f db/filname
 python3 console.py
 flask run
