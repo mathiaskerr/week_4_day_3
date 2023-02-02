@@ -8,7 +8,7 @@ from flask import Blueprint
 books_blueprint = Blueprint("books", __name__)
 
 @books_blueprint.route("/books")
-def tasks():
+def books():
     books = book_repository.select_all()
     return render_template('books/index.html', all_books = books)
 
@@ -38,8 +38,9 @@ def delete_book(id):
     return redirect('/books')
     # deleting only the top entry on webpage
 
-@books_blueprint.route("/book/<id>/edit", methods= ["GET"])
+@books_blueprint.route("/book/<id>/edit", methods=["GET"])
 def edit_book(id):
     book = book_repository.select(id)
     authors = author_repository.select_all()
-    return render_template("books/edit.html", task = task, all_authors = authors)
+    return render_template("books/edit.html", book = book, all_authors = authors)
+

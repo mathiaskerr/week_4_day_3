@@ -7,8 +7,9 @@
         {{book.author.name}}<br>
         {{book.genre}}<br>
         
-        <form action="/book/{{book.id}}/delete" method="POST">
+        <form action="/book/{{book.id}}/delete" method="post">
             <button class="delete-button" type="submit"> Delete </button>
+        </form>    
             <hr>
     </div>
 {% endfor %}
